@@ -24,7 +24,7 @@ public class GridManager : MonoBehaviour
             {
                 Instantiate(WCell, new Vector3(col, row, 0), Quaternion.identity);
                 //         |prefab|        |position|         |rotation|
-                //         |prefab|   |transform.position|    |rotation|
+                //         |prefab|   |transform.position|    |rotation| |parent|
 
             }
         }
@@ -32,6 +32,6 @@ public class GridManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //budliky budliky xd
     }
 }
