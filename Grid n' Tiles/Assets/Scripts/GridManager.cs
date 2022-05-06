@@ -12,6 +12,10 @@ public class GridManager : MonoBehaviour
     private GameObject [,] WCells;
     Camera m_MainCamera;
 
+    public Material blackMaterial;
+
+    public Material whiteMaterial;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +33,6 @@ public class GridManager : MonoBehaviour
     {
         if (m_MainCamera == null) return;
 
-        // 5/2 = 2.5 ....math.floor()
         int stredY = cols / 2;
 
         int stredX = rows / 2;
@@ -40,7 +43,7 @@ public class GridManager : MonoBehaviour
 
         m_MainCamera.transform.Translate(x,y,z);
         //m_MainCamera.Position = new Vector3(WCells[stredX, stredY].)
-        //WCells[stredX, stredY].GetComponent().;
+        // WCells[stredX, stredY];
     }
 
 
@@ -68,14 +71,31 @@ public class GridManager : MonoBehaviour
 
     private void UpdateCellGrid()
     {
-        Debug.Log(WCells.Length);       
+        if (WCells != null && WCells.Length > 0)
+        {
+            System.Random random = new System.Random();
+
+            int xRandom = random.Next(0, rows);
+            int yRandom = random.Next(0, cols);
+
+            SpriteRenderer sp = WCells[xRandom, yRandom].GetComponent<SpriteRenderer>();
+
+            sp.sprite = null;
+
+            bool isWhite = random.Next(0, 2) == 0;
+
+            Debug.Log(isWhite);
+
+
+            sp.material = isWhite ? whiteMaterial : blackMaterial;
+        }   
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        //UpdateCellGrid();
+        UpdateCellGrid();
 
     }
 }
