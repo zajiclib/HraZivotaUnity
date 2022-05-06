@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 5936f1e8ebc1e2748841461cedaa9020
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - WCell: {fileID: 5272236799407480240, guid: bb589b352006ac749bdf3358c4f33749, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
